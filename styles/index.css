@@ -37,8 +37,9 @@ header > h1
     margin: 0px;
     padding: 0.5em;
     text-align: center;
-    color: white;
-    font-family: ui-monospace, SFMonfoo-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New,monospace
+    color: rgb(255, 255, 255);
+    font-family: ui-monospace, SFMonfoo-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-size: 1.4vw;
 }
 
 nav > div
@@ -48,6 +49,8 @@ nav > div
 
 nav > div > img
 {
+    min-width: 8.5vw;
+    max-width: 10.5vw;
     vertical-align: middle;
     margin: 5px
 }
