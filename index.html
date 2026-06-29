@@ -1,283 +1,268 @@
 <!DOCTYPE html>
 <html lang="pt-br" data-theme="dark">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Lumora Sky Cotl</title>
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="shortcut icon" href="../media/favicon.ico">
-    </head>
-    <body> 
-        <main>
-            <table id = "global">
-                <thead id = "main">
-                    <th id = "had-local">Horário Atual:</th>
-                    <th id = "had-global">Horário Servidor Sky:</th>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td id = "clk-local">carregando...</td>
-                        <td id = "clk-global">carregando...</td>
-                    </tr>
-                </tbody>
-            </table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumora — Relógios de Sky: Filhos da Luz</title>
+    <meta name="description" content="Lumora: acompanhe em tempo real os resets, eventos sociais, shows da Aurora e ciclos do jogo Sky: Filhos da Luz.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="shortcut icon" href="favicon/favicon.ico">
+</head>
+<body>
+    <div class="parallax-bg" aria-hidden="true"></div>
+    <div class="vignette" aria-hidden="true"></div>
 
-            <table id = "main">
-                <thead>
+    <header class="site-header">
+        <div class="brand">
+            <img src="images/lumora-logo.jpeg" alt="Logo Lumora" class="brand-logo">
+            <div class="brand-text">
+                <h1 class="brand-title">Lumora</h1>
+                <p class="brand-sub">Relógios ✦ Sky: Filhos da Luz </p>
+            </div>
+        </div>
+    </header>
 
-                    <tr id = "teste">
-                        <th>Tipo</th>
-                        <th>Evento</th>
-                        <th>Próximo Evento</th>
-                        <th>Testar</th>
-                    </tr>
+    <main>
+        <!-- Relógios principais -->
+        <table id="global" class="glass-clocks">
+            <thead id="main">
+                <tr>
+                    <th id="had-local">Horário Atual</th>
+                    <th id="had-global">Horário Servidor Sky</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="clk-local">carregando...</td>
+                    <td id="clk-global">carregando...</td>
+                </tr>
+            </tbody>
+        </table>
 
-                </thead>
+        <!-- Tabela principal de eventos -->
+        <table id="main" class="glass-table">
+            <thead>
+                <tr id="teste">
+                    <th>Tipo</th>
+                    <th>Evento</th>
+                    <th>Próximo Evento</th>
+                    <th>Tempo Até comeceçar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td id="clock-div" colspan="4">✦ Resets</td></tr>
 
-                <tbody>
-                    <tr>
-                        <td id = "clock-div" colspan = "4">Resets</th>
-                    </tr>
+                <tr>
+                    <td class="clock-desc" rowspan="3">Resets Sky</td>
+                    <td class="clock-event">Reset semanal</td>
+                    <td class="clock-next" id="clk-reset-week-event">carregando...</td>
+                    <td class="clock-diff" id="clk-reset-week-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Reset diário</td>
+                    <td class="clock-next" id="clk-reset-diary-event">carregando...</td>
+                    <td class="clock-diff" id="clk-reset-diary-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Reset de Temporada</td>
+                    <td class="clock-next">carregando...</td>
+                    <td class="clock-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-desc" rowspan = "3">Resets Sky</th>
-                        <td class = "clock-event">Reset semanal</td>
-                        <td class = "clock-next" id = "clk-reset-week-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-reset-week-diff">00:00:00</td>
-                    </tr>
+                <tr><td id="clock-div" colspan="4">✦ Evento de Cera Social</td></tr>
 
-                    <tr>
-                        <td class = "clock-event">Reset diário</td>
-                        <td class = "clock-next" id = "clk-reset-diary-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-reset-diary-diff">00:00:00</td>
-                    </tr>
+                <tr>
+                    <td class="clock-desc" rowspan="3">Cera Social</td>
+                    <td class="clock-event">Gêiser</td>
+                    <td class="clock-next" id="clk-geyser-event">carregando...</td>
+                    <td class="clock-diff" id="clk-geyser-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Vovó</td>
+                    <td class="clock-next" id="clk-grandma-event">carregando...</td>
+                    <td class="clock-diff" id="clk-grandma-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Tartaruga</td>
+                    <td class="clock-next" id="clk-turtle-event">carregando...</td>
+                    <td class="clock-diff" id="clk-turtle-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-event">Reset de Temporada</td>
-                        <td class = "clock-next">--h --m</td>
-                        <td class = "clock-diff">--:--:--</td>
-                    </tr>
-                    
-                    <tr>
-                        
-                        <td id = "clock-div" colspan = "4">Evento de Cera Social</th>
-                    </tr>
+                <tr><td id="clock-div" colspan="4">♪ Concertos e Shows da Aurora</td></tr>
 
-                    <tr>
-                        <td class = "clock-desc" rowspan = "3">Cera Social</th>
-                        <td class = "clock-event">Gêiser</td>
-                        <td class = "clock-next" id = "clk-geyser-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-geyser-diff">00:00:00</td>
-                    </tr>
-                    
-                    <tr>
-                        <td class = "clock-event">Vovó</td>
-                        <td class = "clock-next" id = "clk-grandma-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-grandma-diff">00:00:00</td>
-                    </tr>
+                <tr>
+                    <td class="clock-desc" rowspan="5">Atividades Pré-Show</td>
+                    <td class="clock-event">Enquetes</td>
+                    <td class="clock-next" id="clk-aurora-pre1-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-pre1-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Trenzinho</td>
+                    <td class="clock-next" id="clk-aurora-pre2-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-pre2-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Cabo de guerra</td>
+                    <td class="clock-next" id="clk-aurora-pre3-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-pre3-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Futebol</td>
+                    <td class="clock-next" id="clk-aurora-pre4-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-pre4-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Corrida de Carangueijos</td>
+                    <td class="clock-next" id="clk-aurora-pre5-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-pre5-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-event">Tartaruga</td>
-                        <td class = "clock-next" id = "clk-turtle-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-turtle-diff">00:00:00</td>
-                    </tr>
+                <tr>
+                    <td class="clock-desc" rowspan="9">Viagem Musical da Aurora</td>
+                    <td class="clock-event">Exhale Inhale</td>
+                    <td class="clock-next" id="clk-aurora-music1-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music1-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Runaway</td>
+                    <td class="clock-next" id="clk-aurora-music2-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music2-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">All is Soft Inside</td>
+                    <td class="clock-next" id="clk-aurora-music3-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music3-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Warrior</td>
+                    <td class="clock-next" id="clk-aurora-music4-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music4-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">The Seed</td>
+                    <td class="clock-next" id="clk-aurora-music5-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music5-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Through the Eyes of a Child</td>
+                    <td class="clock-next" id="clk-aurora-music6-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music6-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">The Light Beyond</td>
+                    <td class="clock-next" id="clk-aurora-music7-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music7-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Subida para a Órbita com a Aurora</td>
+                    <td class="clock-next" id="clk-aurora-music8-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music8-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Queendom</td>
+                    <td class="clock-next" id="clk-aurora-music9-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aurora-music9-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        
-                        <td id = "clock-div" colspan = "4">Consertos e Shows da Aurora</th>
-                    </tr>  
+                <tr><td id="clock-div" colspan="4">☀ Ciclo diário do Aviário</td></tr>
 
-                    <tr>
-                        <td class = "clock-desc" rowspan = "5">Atividades Pré-Show</th>
-                        <td class = "clock-event">Enquetes</td>
-                        <td class = "clock-next" id = "clk-aurora-pre1-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-pre1-diff">00:00:00</td>
-                    </tr>  
+                <tr>
+                    <td class="clock-desc" rowspan="5">Horários</td>
+                    <td class="clock-event">Amanhecer</td>
+                    <td class="clock-next" id="clk-aviary-morning-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aviary-morning-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Neblina</td>
+                    <td class="clock-next" id="clk-aviary-fog-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aviary-fog-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Dia</td>
+                    <td class="clock-next" id="clk-aviary-day-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aviary-day-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Entardecer</td>
+                    <td class="clock-next" id="clk-aviary-evening-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aviary-evening-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Noite</td>
+                    <td class="clock-next" id="clk-aviary-night-event">carregando...</td>
+                    <td class="clock-diff" id="clk-aviary-night-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-event">Trenzinho</td>
-                        <td class = "clock-next" id = "clk-aurora-pre2-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-pre2-diff">00:00:00</td>
-                    </tr> 
+                <tr><td id="clock-div" colspan="4">◆ Missões</td></tr>
 
-                    <tr>
-                        <td class = "clock-event">Cabo de guerra</td>
-                        <td class = "clock-next" id = "clk-aurora-pre3-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-pre3-diff">00:00:00</td>
-                    </tr> 
+                <tr>
+                    <td class="clock-desc" rowspan="4">Missões Guia da Passagem</td>
+                    <td class="clock-event">Passagem da Confiança</td>
+                    <td class="clock-next" id="clk-passage-mission2-event">carregando...</td>
+                    <td class="clock-diff" id="clk-passage-mission2-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Passagem da Assistência</td>
+                    <td class="clock-next" id="clk-passage-mission3-event">carregando...</td>
+                    <td class="clock-diff" id="clk-passage-mission3-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Passagem da Coordenação</td>
+                    <td class="clock-next" id="clk-passage-mission4-event">carregando...</td>
+                    <td class="clock-diff" id="clk-passage-mission4-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Passagem do Alinhamento</td>
+                    <td class="clock-next" id="clk-passage-mission5-event">carregando...</td>
+                    <td class="clock-diff" id="clk-passage-mission5-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-desc">Missão Guia do Ninho</td>
+                    <td class="clock-event">Visitar o ninho ao pôr do sol</td>
+                    <td class="clock-next" id="clk-nest-mission-event">carregando...</td>
+                    <td class="clock-diff" id="clk-nest-mission-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-event">Futebol</td>
-                        <td class = "clock-next" id = "clk-aurora-pre4-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-pre4-diff">00:00:00</td>
-                    </tr>  
+                <tr><td id="clock-div" colspan="4">☁ Ciclo de Climas</td></tr>
 
-                    <tr>
-                        <td class = "clock-event">Corrida de Carangueijos</td>
-                        <td class = "clock-next" id = "clk-aurora-pre5-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-pre5-diff">00:00:00</td>
-                    </tr>  
+                <tr>
+                    <td class="clock-desc">Casa na Árvore</td>
+                    <td id="clk-treehouse-weather-state">Clima Atual:</td>
+                    <td class="clock-next" id="clk-treehouse-weather-event">carregando...</td>
+                    <td class="clock-diff" id="clk-treehouse-weather-diff">carregando...</td>
+                </tr>
 
-                    <tr>
-                        <td class = "clock-desc" rowspan = "9">Viagem Musical da Aurora</th>
-                        <td class = "clock-event">Exhale Inhale</td>
-                        <td class = "clock-next" id = "clk-aurora-music1-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music1-diff">00:00:00</td>
-                    </tr>  
-                    
-                    <tr>
-                        <td class = "clock-event">Runaway</td>
-                        <td class = "clock-next" id = "clk-aurora-music2-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music2-diff">00:00:00</td>
-                    </tr>  
+                <tr><td id="clock-div" colspan="4">✶ Segredos</td></tr>
 
-                    <tr>
-                        <td class = "clock-event">All is Soft Inside</td>
-                        <td class = "clock-next" id = "clk-aurora-music3-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music3-diff">00:00:00</td>
-                    </tr>  
+                <tr>
+                    <td class="clock-desc" rowspan="2">Segredos</td>
+                    <td class="clock-event">Anéis de Fada da Campina</td>
+                    <td class="clock-next" id="clk-secret-fairy-event">carregando...</td>
+                    <td class="clock-diff" id="clk-secret-fairy-diff">carregando...</td>
+                </tr>
+                <tr>
+                    <td class="clock-event">Arco-Íris da Floresta Oculta</td>
+                    <td class="clock-next" id="clk-secret-rainbow-event">carregando...</td>
+                    <td class="clock-diff" id="clk-secret-rainbow-diff">carregando...</td>
+                </tr>
+            </tbody>
+        </table>
 
-                    <tr>
-                        <td class = "clock-event">Warrior</td>
-                        <td class = "clock-next" id = "clk-aurora-music4-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music4-diff">00:00:00</td>
-                    </tr>  
+        <footer class="site-footer">
+            <p>Lumora · Feito para a comunidade 🇧🇷 de Sky</p>
+        </footer>
+    </main>
 
-                    <tr>
-                        <td class = "clock-event">The Seed</td>
-                        <td class = "clock-next" id = "clk-aurora-music5-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music5-diff" >00:00:00</td>
-                    </tr>  
-
-                    <tr>
-                        <td class = "clock-event">Through the Eyes of a Child</td>
-                        <td class = "clock-next" id = "clk-aurora-music6-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music6-diff">00:00:00</td>
-                    </tr>  
-
-                    <tr>
-                        <td class = "clock-event">The Light Beyond</td>
-                        <td class = "clock-next" id = "clk-aurora-music7-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music7-diff">00:00:00</td>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-event">Subida para a Órbita com a Aurora</td>
-                        <td class = "clock-next" id = "clk-aurora-music8-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music8-diff">00:00:00</td>
-                    </tr>    
-
-                    <tr>
-                        <td class = "clock-event">Queendom</td>
-                        <td class = "clock-next" id = "clk-aurora-music9-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aurora-music9-diff">00:00:00</td>
-                    </tr> 
-                    
-                    <tr>
-                        
-                        <td id = "clock-div" colspan = "4">Ciclo diário do Aviário</th>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-desc" rowspan = "5">Horários</th>
-                        <td class = "clock-event">Amanhecer</td>
-                        <td class = "clock-next" id = "clk-aviary-morning-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aviary-morning-diff">00:00:00</td>
-                    </tr>                
-                    
-                    <tr>
-                        <td class = "clock-event">Neblina</td>
-                        <td class = "clock-next" id = "clk-aviary-fog-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aviary-fog-diff">00:00:00</td>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-event">Dia</td>
-                        <td class = "clock-next" id = "clk-aviary-day-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aviary-day-diff">00:00:00</td>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-event">Entardecer</td>
-                        <td class = "clock-next" id = "clk-aviary-evening-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aviary-evening-diff">00:00:00</td>
-                    </tr>
-                    
-                    <tr>
-                        <td class = "clock-event">Noite</td>
-                        <td class = "clock-next" id = "clk-aviary-night-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-aviary-night-diff">00:00:00</td>
-                    </tr>
-
-                    <tr>
-                        
-                        <td id = "clock-div" colspan = "4">Missões</th>
-                    </tr>
-
-                
-                    <tr>
-                        <td class = "clock-desc" rowspan = "4">Missões Guia da Passagem</th>
-                        <td class = "clock-event">Passagem da Confiança</td>
-                        <td class = "clock-next" id = "clk-passage-mission2-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-passage-mission2-diff">00:00:00</td>
-                    </tr>  
-
-                    <tr>
-                        <td class = "clock-event">Passagem da Assistência</td>
-                        <td class = "clock-next" id = "clk-passage-mission3-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-passage-mission3-diff">00:00:00</td>
-                    </tr>  
-
-                    <tr>
-                        <td class = "clock-event">Passagem da Coordenação</td>
-                        <td class = "clock-next" id = "clk-passage-mission4-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-passage-mission4-diff">00:00:00</td>
-                    </tr>  
-
-                    <tr>
-                        <td class = "clock-event">Passagem do Alinhamento</td>
-                        <td class = "clock-next" id = "clk-passage-mission5-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-passage-mission5-diff">00:00:00</td>
-                    </tr> 
-
-                    <tr>
-                        <td class = "clock-desc" rowspan = "1">Missão Guia do Ninho</th>
-                        <td class = "clock-event">Visitar o ninho ao pôr do sol</td>
-                        <td class = "clock-next" id = "clk-nest-mission-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-nest-mission-diff">00:00:00</td>
-                    </tr>
-                      
-                    <tr>
-                        <td id = "clock-div" colspan = "4">Ciclo de Climas</th>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-desc" rowspan = "1">Casa na Árvore</th>
-                        <td id ="clk-treehouse-weather-state">Clima Atual:</td>
-                        <td class = "clock-next" id = "clk-treehouse-weather-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-treehouse-weather-diff">00:00:00</td>
-                    </tr>
-                    
-                    <tr> 
-                        <td id = "clock-div" colspan = "4">Segredos</th>
-                    </tr>
-                    
-                    <tr>
-                        <td class = "clock-desc" rowspan = "2">Segredos</th>
-                        <td class = "clock-event">Anéis de Fada da Campina</td>
-                        <td class = "clock-next" id = "clk-secret-fairy-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-secret-fairy-diff">00:00:00</td>
-                    </tr>
-
-                    <tr>
-                        <td class = "clock-event">Arco-Íris da Floresta Oculta</td>
-                        <td class = "clock-next" id = "clk-secret-rainbow-event">00h 00m</td>
-                        <td class = "clock-diff" id = "clk-secret-rainbow-diff">00:00:00</td>
-                    </tr>
-
-                </tbody>
-            </table>
-        </main>
-        <script type="module" src="scripts/clocks.js"></script>
-    </body>
+    <script>
+        // Paralax sutil baseado no scroll
+        document.addEventListener('scroll', () => {
+            const bg = document.querySelector('.parallax-bg');
+            if (bg) bg.style.transform = `translate3d(0, ${window.scrollY * 0.35}px, 0)`;
+        }, { passive: true });
+    </script>
+    <script type="module" src="scripts/clocks.js"></script>
+</body>
 </html>

@@ -36,7 +36,7 @@
         "schedule": {
             "type": "interval",
             "every": 120,
-            "start": "01:05"
+            "start": "00:05"
         }
     },
 
@@ -50,7 +50,7 @@
         "schedule": {
             "type": "interval",
             "every": 120,
-            "start": "01:35"
+            "start": "00:35"
         }
     },
 
@@ -64,7 +64,7 @@
         "schedule": {
             "type": "interval",
             "every": 120,
-            "start": "01:50"
+            "start": "00:50"
         }
     },
 
