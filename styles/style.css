@@ -3,6 +3,8 @@
     --bg: #14102b;
     --gold: #e9c87a;
     --gold-soft: #f3dca0;
+    --brand-accent: var(--gold);
+    --section-title: var(--gold);
     --violet: #6b4ea8;
     --blue: #7dc7ff;
     --text: #f6f1ff;
@@ -24,6 +26,8 @@ html[data-theme="light"] {
     --glass-bg: color-mix(in oklab, white 58%, transparent);
     --glass-bg-strong: color-mix(in oklab, white 72%, transparent);
     --glass-border: color-mix(in oklab, #6b4ea8 24%, white 40%);
+    --brand-accent: #4b2b78;
+    --section-title: #5a347d;
 }
 
 * { box-sizing: border-box; }
@@ -128,7 +132,7 @@ html[data-theme="light"] .background-day { opacity: 1; }
 }
 
 .brand-logo { width: 64px; height: 64px; object-fit: contain; border-radius: 18px; filter: drop-shadow(0 0 16px rgba(233, 200, 122, 0.45)); }
-.brand-title { margin: 0; font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: 0.04em; color: var(--gold); }
+.brand-title { margin: 0; font-family: var(--font-display); font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: 0.04em; color: var(--brand-accent); }
 .brand-sub { margin: 0.1rem 0 0; color: var(--text-dim); font-size: 0.75rem; letter-spacing: 0.22em; text-transform: uppercase; }
 .sky-logo { font-family: var(--font-display); font-size: 1.35rem; color: var(--blue); letter-spacing: 0.08em; text-shadow: 0 0 18px rgba(125,199,255,.5); }
 
@@ -163,13 +167,28 @@ main {
 .clock-time { display: block; margin-top: 0.35rem; font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 5.4rem); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 4px 30px rgba(255, 255, 255, 0.18); }
 .clock-card-sky { background: linear-gradient(135deg, var(--glass-bg-strong), color-mix(in oklab, var(--violet) 18%, transparent)); }
 
-.event-sections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.event-group { border-radius: 26px; overflow: hidden; min-height: 100%; }
+.event-sections {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: start;
+    gap: 1rem;
+}
+
+.event-column {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.event-group {
+    border-radius: 26px;
+    overflow: hidden;
+}
 .event-group-media { min-height: 8rem; background: linear-gradient(135deg, rgba(233,200,122,.28), rgba(107,78,168,.32)); }
 .event-group-media img { width: 100%; height: 100%; max-height: 11rem; object-fit: cover; display: block; opacity: .84; }
 .event-group-body { padding: 1rem; }
 .event-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
-.event-group h2 { margin: 0; font-family: var(--font-display); color: var(--gold); font-size: 1.25rem; }
+.event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
 .event-card-list { display: grid; gap: 0.55rem; }
 .event-card { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.75rem; border: 1px solid color-mix(in oklab, white 12%, transparent); border-radius: 16px; background: color-mix(in oklab, black 16%, transparent); }
 .event-name { font-weight: 700; }
@@ -189,7 +208,8 @@ main {
     .app-shell { padding: 0.85rem; }
     .brand { width: 100%; justify-content: center; flex-wrap: wrap; }
     .brand-logo { width: 52px; height: 52px; }
-    .hero-clocks, .event-sections { grid-template-columns: 1fr; }
+    .hero-clocks { grid-template-columns: 1fr; }
+    .event-sections { grid-template-columns: 1fr; }
     .event-group-heading { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
     .event-meta { flex-direction: column; gap: 0.15rem; }
     .clock-next, .clock-diff { text-align: left; }
