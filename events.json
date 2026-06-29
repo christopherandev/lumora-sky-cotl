@@ -1,0 +1,169 @@
+[
+    {
+        "id": "reset-daily",
+        "name": "Reset Diário",
+        "element": {
+            "event": "clk-reset-diary-event",
+            "diff": "clk-reset-diary-diff"
+        },
+        "schedule": {
+            "type": "daily",
+            "at": "00:00"
+        }
+    },
+
+    {
+        "id": "reset-weekly",
+        "name": "Reset Semanal",
+        "element": {
+            "event": "clk-reset-week-event",
+            "diff": "clk-reset-week-diff"
+        },
+        "schedule": {
+            "type": "weekly",
+            "weekday": 1,
+            "at": "07:00"
+        }
+    },
+
+    {
+        "id": "geyser",
+        "name": "Gêiser",
+        "element": {
+            "event": "clk-geyser-event",
+            "diff": "clk-geyser-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 120,
+            "start": "01:05"
+        }
+    },
+
+    {
+        "id": "grandma",
+        "name": "Vovó",
+        "element": {
+            "event": "clk-grandma-event",
+            "diff": "clk-grandma-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 120,
+            "start": "01:35"
+        }
+    },
+
+    {
+        "id": "turtle",
+        "name": "Tartaruga",
+        "element": {
+            "event": "clk-turtle-event",
+            "diff": "clk-turtle-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 120,
+            "start": "01:50"
+        }
+    },
+
+    {
+        "id": "aurora-pre1",
+        "name": "Aurora Pré 1",
+        "element": {
+            "event": "clk-aurora-pre1-event",
+            "diff": "clk-aurora-pre1-diff"
+        },
+        "schedule": {
+            "type": "list",
+            "times": [
+                "00:00",
+                "04:00",
+                "08:00",
+                "12:00",
+                "16:00",
+                "20:00"
+            ]
+        }
+    },
+
+    {
+        "id": "aurora-music",
+        "name": "Aurora Música",
+        "element": {
+            "event": "clk-aurora-music1-event",
+            "diff": "clk-aurora-music1-diff"
+        },
+        "schedule": {
+            "type": "list",
+            "times": [
+                "01:00",
+                "05:00",
+                "09:00",
+                "13:00",
+                "17:00",
+                "21:00"
+            ]
+        }
+    },
+
+    {
+        "id": "aviary-day",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-aviary-day-event",
+            "diff": "clk-aviary-day-diff"
+        },
+        "schedule": {
+            "type": "list",
+            "times": [
+                "00:15",
+                "01:15",
+                "02:15",
+                "03:15"
+            ]
+        }
+    },
+
+    {
+        "id": "passage",
+        "name": "Missões da Passagem",
+        "element": {
+            "event": "clk-passage-mission2-event",
+            "diff": "clk-passage-mission2-diff"
+        },
+        "schedule": {
+            "type": "weekly-interval",
+            "everyDay": 1,
+            "at": "00:00"
+        }
+    },
+
+    {
+        "id": "nest",
+        "name": "Ninho",
+        "element": {
+            "event": "clk-nest-mission-event",
+            "diff": "clk-nest-mission-diff"
+        },
+        "schedule": {
+            "type": "daily",
+            "at": "00:40"
+        }
+    },
+
+    {
+        "id": "treehouse-weather",
+        "name": "Clima da Casa da Árvore",
+        "element": {
+            "event": "clk-treehouse-weather-event",
+            "diff": "clk-treehouse-weather-diff"
+        },
+        "schedule": {
+            "type": "weekly-interval",
+            "everyDay": 7,
+            "at": "07:00"
+        }
+    }
+]

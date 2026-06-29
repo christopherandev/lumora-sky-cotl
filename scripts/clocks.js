@@ -234,7 +234,6 @@ function GetEventDiff(e_interval, next_event, e_weekday)
     return diff
 }
 
-
 function GetUserTimeZone()
 {
     const date = new Date(Date.now())

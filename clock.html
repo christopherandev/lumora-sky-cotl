@@ -4,20 +4,20 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Central Sky Game</title>
-        <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="styles/style.css">
         <link rel="shortcut icon" href="../media/favicon.ico">
     </head>
     <body> 
         <main>
             <table id = "global">
                 <thead id = "main">
-                    <th id = "had-local">Horário Atual (GMT 0:00)</th>
-                    <th id = "had-global">Horário Servidor Sky (GMT -07:00)</th>
+                    <th id = "had-local">Horário Atual:</th>
+                    <th id = "had-global">Horário Servidor Sky:</th>
                 </thead>
                 <tbody>
                     <tr>
-                        <td id = "clk-local">00:00:00</td>
-                        <td id = "clk-global">00:00:00</td>
+                        <td id = "clk-local">carregando...</td>
+                        <td id = "clk-global">carregando...</td>
                     </tr>
                 </tbody>
             </table>
@@ -278,6 +278,6 @@
                 </tbody>
             </table>
         </main>
-        <script src="../scripts/script.js"></script>
+        <script type="module" src="scripts/clocksV2.js"></script>
     </body>
 </html>
