@@ -1,4 +1,3 @@
-/* ============ Lumora · Sky CotL ============ */
 :root {
     --bg: #14102b;
     --gold: #e9c87a;
@@ -21,6 +20,7 @@
 html[data-theme="light"] {
     --bg: #f2e6cc;
     --text: #221a35;
+    --gold-soft: #b18e36;
     --text-dim: rgba(34, 26, 53, 0.72);
     --text-mute: rgba(34, 26, 53, 0.55);
     --glass-bg: color-mix(in oklab, white 58%, transparent);
@@ -53,7 +53,7 @@ html, body {
     inset: -12% 0 -24%;
     z-index: -2;
     overflow: hidden;
-    background: url("../images/sky-bg.jpeg") center top / cover no-repeat;
+    /*background: url("../images/sky-bg.jpeg") center top / cover no-repeat;*/
     will-change: transform;
 }
 
@@ -189,7 +189,7 @@ main {
 .event-group-body { padding: 1rem; }
 .event-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
 .event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
-..event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
+.event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
 .event-card-list { display: grid; gap: 0.55rem; }
 .event-card { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.75rem; border: 1px solid color-mix(in oklab, white 12%, transparent); border-radius: 16px; background: color-mix(in oklab, black 16%, transparent); }
 .event-name { font-weight: 700; }
