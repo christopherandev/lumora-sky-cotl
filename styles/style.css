@@ -163,8 +163,20 @@ main {
 .clock-time { display: block; margin-top: 0.35rem; font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 5.4rem); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 4px 30px rgba(255, 255, 255, 0.18); }
 .clock-card-sky { background: linear-gradient(135deg, var(--glass-bg-strong), color-mix(in oklab, var(--violet) 18%, transparent)); }
 
-.event-sections { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
-.event-group { border-radius: 26px; overflow: hidden; min-height: 100%; }
+.event-sections {
+    columns: 3 20rem;
+    column-gap: 1rem;
+}
+
+.event-group {
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 1rem;
+    border-radius: 26px;
+    overflow: hidden;
+    break-inside: avoid;
+    page-break-inside: avoid;
+}
 .event-group-media { min-height: 8rem; background: linear-gradient(135deg, rgba(233,200,122,.28), rgba(107,78,168,.32)); }
 .event-group-media img { width: 100%; height: 100%; max-height: 11rem; object-fit: cover; display: block; opacity: .84; }
 .event-group-body { padding: 1rem; }
@@ -182,14 +194,15 @@ main {
 @media (max-width: 1100px) {
     .site-header { grid-template-columns: 1fr; justify-items: center; }
     .date-card, .theme-toggle { justify-self: center; }
-    .event-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .event-sections { columns: 2 20rem; }
 }
 
 @media (max-width: 720px) {
     .app-shell { padding: 0.85rem; }
     .brand { width: 100%; justify-content: center; flex-wrap: wrap; }
     .brand-logo { width: 52px; height: 52px; }
-    .hero-clocks, .event-sections { grid-template-columns: 1fr; }
+    .hero-clocks { grid-template-columns: 1fr; }
+    .event-sections { columns: 1; }
     .event-group-heading { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
     .event-meta { flex-direction: column; gap: 0.15rem; }
     .clock-next, .clock-diff { text-align: left; }
