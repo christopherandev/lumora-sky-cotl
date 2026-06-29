@@ -189,6 +189,7 @@ main {
 .event-group-body { padding: 1rem; }
 .event-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
 .event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
+..event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
 .event-card-list { display: grid; gap: 0.55rem; }
 .event-card { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.75rem; border: 1px solid color-mix(in oklab, white 12%, transparent); border-radius: 16px; background: color-mix(in oklab, black 16%, transparent); }
 .event-name { font-weight: 700; }
@@ -201,7 +202,7 @@ main {
 @media (max-width: 1100px) {
     .site-header { grid-template-columns: 1fr; justify-items: center; }
     .date-card, .theme-toggle { justify-self: center; }
-    .event-sections { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .event-sections { columns: 2 20rem; }
 }
 
 @media (max-width: 720px) {
@@ -210,6 +211,7 @@ main {
     .brand-logo { width: 52px; height: 52px; }
     .hero-clocks { grid-template-columns: 1fr; }
     .event-sections { grid-template-columns: 1fr; }
+    .event-sections { columns: 1; }
     .event-group-heading { align-items: flex-start; flex-direction: column; gap: 0.2rem; }
     .event-meta { flex-direction: column; gap: 0.15rem; }
     .clock-next, .clock-diff { text-align: left; }
