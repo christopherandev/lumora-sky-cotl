@@ -4,7 +4,7 @@ let     DiffTimeZone = { hour: 0, min: 0};
 let     Events;
 
 const StrWeek = [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ];
-
+ 
 window.onload = async () =>
 {
     const user_tz = GetAppTimerZone() * (-1);
