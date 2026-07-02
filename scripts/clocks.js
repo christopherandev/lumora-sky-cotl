@@ -3,6 +3,8 @@ const   SkyTimeZone  = { hour: -7, min: 0};
 let     DiffTimeZone = { hour: 0, min: 0};
 let     Events;
 
+const StrWeek = [ "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado" ];
+
 window.onload = async () =>
 {
     const user_tz = GetAppTimerZone() * (-1);
@@ -124,6 +126,93 @@ function OnAppUpdate()
                 break;
             }
 
+            case "weekly":
+            {
+                const now        = new Date(skydate);
+                const weekday    = schedule.weekday;
+                const now_weeday = now.getUTCDay();
+
+                const [hour, min] = schedule.at.split(':').map(Number);
+
+                const next = new Date(now);
+                next.setUTCHours(hour, min, 0, 0);
+
+                const day_diff = (weekday - now_weeday + 7) % 7;
+                
+                if(day_diff === 0 && next < now)
+                {
+                    next.setUTCDate(next.getUTCDate() + 7);
+                }
+
+                next.setUTCDate(next.getUTCDate() + day_diff);
+
+                next.setUTCHours(next.getUTCHours() + DiffTimeZone.hour);
+                next.setUTCMinutes(next.getUTCMinutes() + DiffTimeZone.min);
+
+                const str = 
+                `${StrWeek[next.getUTCDay()]} às ` +
+                `${String(next.getUTCHours()).padStart(2,'0')} h ` + `${String(next.getUTCMinutes()).padStart(2,'0')} m`;
+
+                document.getElementById(event.element.event).innerText = str;
+
+                const remaining = (next.getTime() - appdate);
+                
+                const timestamp = Math.floor(remaining / 1000);
+
+                const hours = Math.floor(timestamp / 3600);
+
+                const minutes = Math.floor((timestamp % 3600) / 60);
+
+                const seconds = timestamp % 60;
+
+                const doc = `${String(hours).padStart(2, '0')} h ` + `${String(minutes).padStart(2, '0')} m ` + `${String(seconds).padStart(2, '0')} s`
+
+                document.getElementById(event.element.diff).innerText = doc;
+            }
+
+            case "weekly-interval":
+            {
+                const now        = new Date(skydate);
+                const weekday    = schedule.everyday;
+                const now_weeday = now.getUTCDay();
+
+                const [hour, min] = schedule.at.split(':').map(Number);
+
+                const next = new Date(now);
+                next.setUTCHours(hour, min, 0, 0);
+
+                const day_diff = (weekday - now_weeday + 7) % 7;
+                
+                if(day_diff === 0 && next < now)
+                {
+                    next.setUTCDate(next.getUTCDate() + 7);
+                }
+
+                next.setUTCDate(next.getUTCDate() + day_diff);
+
+                next.setUTCHours(next.getUTCHours() + DiffTimeZone.hour);
+                next.setUTCMinutes(next.getUTCMinutes() + DiffTimeZone.min);
+
+                const str = 
+                `${StrWeek[next.getUTCDay()]} às ` +
+                `${String(next.getUTCHours()).padStart(2,'0')} h ` + `${String(next.getUTCMinutes()).padStart(2,'0')} m`;
+
+                document.getElementById(event.element.event).innerText = str;
+
+                const remaining = (next.getTime() - appdate);
+                
+                const timestamp = Math.floor(remaining / 1000);
+
+                const hours = Math.floor(timestamp / 3600);
+
+                const minutes = Math.floor((timestamp % 3600) / 60);
+
+                const seconds = timestamp % 60;
+
+                const doc = `${String(hours).padStart(2, '0')} h ` + `${String(minutes).padStart(2, '0')} m ` + `${String(seconds).padStart(2, '0')} s`
+
+                document.getElementById(event.element.diff).innerText = doc;
+            }
             default:
     
         }

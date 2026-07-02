@@ -21,8 +21,8 @@
         },
         "schedule": {
             "type": "weekly",
-            "weekday": 1,
-            "at": "07:00"
+            "weekday": 0,
+            "at": "00:00"
         }
     },
 
@@ -112,47 +112,155 @@
         "id": "aviary-day",
         "name": "Vila do Aviário",
         "element": {
-            "event": "clk-aviary-day-event",
-            "diff": "clk-aviary-day-diff"
+            "event": "clk-aviary-morning-event",
+            "diff": "clk-aviary-morning-diff"
         },
         "schedule": {
-            "type": "list",
-            "times": [
-                "00:15",
-                "01:15",
-                "02:15",
-                "03:15"
-            ]
+            "type": "interval",
+            "every": 60,
+            "start": "00:00"
         }
     },
 
     {
-        "id": "passage",
+        "id": "aviary-day",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-aviary-fog-event",
+            "diff": "clk-aviary-fog-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:10"
+        }
+    },
+
+    {
+        "id": "aviary-day",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-aviary-day-event",
+            "diff": "clk-aviary-day-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:15"
+        }
+    },
+
+    {
+        "id": "aviary-day",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-aviary-evening-event",
+            "diff": "clk-aviary-evening-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:40"
+        }
+    },
+    
+    {
+        "id": "secret-fairy",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-secret-fairy-event",
+            "diff": "clk-secret-fairy-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:50"
+        }
+    },
+
+    {
+        "id": "secret-fairy",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-secret-rainbow-event",
+            "diff": "clk-secret-rainbow-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 720,
+            "start": "05:00"
+        }
+    },
+
+    {
+        "id": "aviary-day",
+        "name": "Vila do Aviário",
+        "element": {
+            "event": "clk-aviary-night-event",
+            "diff": "clk-aviary-night-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:50"
+        }
+    },
+
+    {
+        "id": "mission-passage-1",
+        "name": "Missões da Passagem",
+        "element": {
+            "event": "clk-passage-mission1-event",
+            "diff": "clk-passage-mission1-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:00"
+        }
+    },
+
+    {
+        "id": "mission-passage-2",
         "name": "Missões da Passagem",
         "element": {
             "event": "clk-passage-mission2-event",
             "diff": "clk-passage-mission2-diff"
         },
         "schedule": {
-            "type": "weekly-interval",
-            "everyDay": 1,
-            "at": "00:00"
+            "type": "interval",
+            "every": 60,
+            "start": "00:15"
         }
     },
 
-    {
-        "id": "nest",
-        "name": "Ninho",
+        {
+        "id": "mission-passage-3",
+        "name": "Missões da Passagem",
         "element": {
-            "event": "clk-nest-mission-event",
-            "diff": "clk-nest-mission-diff"
+            "event": "clk-passage-mission3-event",
+            "diff": "clk-passage-mission3-diff"
         },
         "schedule": {
-            "type": "daily",
-            "at": "00:40"
+            "type": "interval",
+            "every": 60,
+            "start": "00:30"
         }
     },
-
+    {
+        "id": "mission-passage-4",
+        "name": "Missões da Passagem",
+        "element": {
+            "event": "clk-passage-mission4-event",
+            "diff": "clk-passage-mission4-diff"
+        },
+        "schedule": {
+            "type": "interval",
+            "every": 60,
+            "start": "00:45"
+        }
+    },
+    
     {
         "id": "treehouse-weather",
         "name": "Clima da Casa da Árvore",
@@ -162,8 +270,8 @@
         },
         "schedule": {
             "type": "weekly-interval",
-            "everyDay": 7,
-            "at": "07:00"
+            "everyday": 4,
+            "at": "00:00"
         }
     }
 ]
