@@ -152,7 +152,7 @@ function OnAppUpdate()
                 const str = 
                 `${StrWeek[next.getUTCDay()]} às ` +
                 `${String(next.getUTCHours()).padStart(2,'0')} h ` + `${String(next.getUTCMinutes()).padStart(2,'0')} m`;
-
+                
                 document.getElementById(event.element.event).innerText = str;
 
                 const remaining = (next.getTime() - appdate);
@@ -168,6 +168,8 @@ function OnAppUpdate()
                 const doc = `${String(hours).padStart(2, '0')} h ` + `${String(minutes).padStart(2, '0')} m ` + `${String(seconds).padStart(2, '0')} s`
 
                 document.getElementById(event.element.diff).innerText = doc;
+
+                break;
             }
 
             case "weekly-interval":
@@ -212,6 +214,8 @@ function OnAppUpdate()
                 const doc = `${String(hours).padStart(2, '0')} h ` + `${String(minutes).padStart(2, '0')} m ` + `${String(seconds).padStart(2, '0')} s`
 
                 document.getElementById(event.element.diff).innerText = doc;
+
+                break;
             }
             default:
     
