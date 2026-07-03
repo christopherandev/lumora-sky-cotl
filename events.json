@@ -82,22 +82,16 @@
     },
 
     {
-        "id": "aurora-pre1",
-        "name": "Aurora Pré 1",
+        "id": "aurora-show",
+        "name": "Aurora Show",
         "element": {
-            "event": "clk-aurora-pre1-event",
-            "diff": "clk-aurora-pre1-diff"
+            "event": "clk-aurora-show-event",
+            "diff": "clk-aurora-show-diff"
         },
         "schedule": {
-            "type": "list",
-            "times": [
-                "00:00",
-                "04:00",
-                "08:00",
-                "12:00",
-                "16:00",
-                "20:00"
-            ]
+            "type": "interval",
+            "every": 120,
+            "start": "00:10"
         }
     },
 

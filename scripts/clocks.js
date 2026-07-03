@@ -58,6 +58,9 @@ function OnAppUpdate()
     document.getElementById("clk-local").innerText = `${app_hour}:${app_min}:${sec}`;
     document.getElementById("clk-global").innerText = `${sky_hour}:${sky_min}:${sec}`;
 
+    document.getElementById('current-weekday').innerText = StrWeek[appdate.getUTCDay()];
+    document.getElementById('current-date').innerText = `${String(appdate.getUTCDate()).padStart(2, '0')} de ${StrMonth[appdate.getUTCMonth()]} de ${appdate.getUTCFullYear()}`;
+    
     for(const event of Events)
     {
         const schedule = event.schedule;
@@ -274,3 +277,17 @@ function OnAppUpdate()
     }
 
 }
+
+document.addEventListener('scroll', () => 
+{
+    const bg = document.querySelector('.background-layer');
+    if (bg) bg.style.transform = `translate3d(0, ${window.scrollY * 0.18}px, 0)`;
+}, { passive: true });
+
+document.querySelector('[data-theme-toggle]').addEventListener('click', () => 
+{
+    const root = document.documentElement;
+    const nextTheme = root.dataset.theme === 'light' ? 'dark' : 'light';
+    root.dataset.theme = nextTheme;
+    document.querySelector('.theme-toggle-icon').innerText = nextTheme === 'light' ? '☀' : '☾';
+});
