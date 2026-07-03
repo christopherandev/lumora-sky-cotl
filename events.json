@@ -22,7 +22,7 @@
         "schedule": {
             "type": "weekly",
             "weekday": 0,
-            "at": "00:00"
+            "at": "0:00"
         }
     },
 
@@ -35,7 +35,7 @@
         },
         "schedule": {
             "type": "date",
-            "isodate": "2026-07-03T00:00:00Z"
+            "isodate": "2026-07-17T00:00:00Z"
         }
     },
 
@@ -92,26 +92,6 @@
             "type": "interval",
             "every": 120,
             "start": "00:10"
-        }
-    },
-
-    {
-        "id": "aurora-music",
-        "name": "Aurora Música",
-        "element": {
-            "event": "clk-aurora-music1-event",
-            "diff": "clk-aurora-music1-diff"
-        },
-        "schedule": {
-            "type": "list",
-            "times": [
-                "01:00",
-                "05:00",
-                "09:00",
-                "13:00",
-                "17:00",
-                "21:00"
-            ]
         }
     },
 
@@ -276,9 +256,20 @@
             "diff": "clk-treehouse-weather-diff"
         },
         "schedule": {
-            "type": "weekly-interval",
-            "everyday": 4,
-            "at": "00:00"
+            "type": "weekly-phases",
+            "phases": 
+            [
+                {
+                    "label": "Mudança de clima - Ensolarado:",
+                    "start": [0, "00:00"],
+                    "end": [4, "00:00"]
+                },
+                {
+                    "label": "Mudança de clima - Chuvoso:",
+                    "start": [4, "00:00"],
+                    "end": [0, "00:00"]
+                }
+            ]
         }
     }
 ]

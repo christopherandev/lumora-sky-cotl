@@ -123,6 +123,17 @@ html[data-theme="light"] .background-day { opacity: 1; }
     text-transform: uppercase;
 }
 
+.clock-label
+{
+    display: block;
+    color: var(--gold-soft);
+    text-align: center;
+    font-size: 1.0rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
 .date-full 
 { 
     text-align: center;
@@ -179,6 +190,7 @@ main {
 .clock-time { display: block; margin-top: 0.35rem; font-family: var(--font-display); font-size: clamp(2.5rem, 8vw, 5.4rem); line-height: 1; font-variant-numeric: tabular-nums; text-shadow: 0 4px 30px rgba(255, 255, 255, 0.18); }
 .clock-card-sky { background: linear-gradient(135deg, var(--glass-bg-strong), color-mix(in oklab, var(--violet) 18%, transparent)); }
 
+
 /* --- SEÇÃO DE EVENTOS HORIZONTAL (VARAL) --- */
 .event-sections {
     display: flex;
@@ -187,18 +199,16 @@ main {
     overflow-x: auto;
     padding-bottom: 1.5rem;
     align-items: start;
-    /*scroll-behavior: smooth;*/
-    /*scrollbar-width: auto;*/
-    /*scrollbar-color: var(--gold) rgba(255, 255, 255, 0.05);*/
     transform: rotateX(180deg);
     align-items: end;
 }
 
-.event-column {
+.event-column 
+{
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-    min-width: 340px;
+    min-width: 30vw;
     flex-shrink: 0;
     transform: rotateX(180deg);
 }
@@ -213,8 +223,60 @@ main {
 .event-group-heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
 .event-group h2 { margin: 0; font-family: var(--font-display); color: var(--section-title); font-size: 1.25rem; }
 .event-card-list { display: grid; gap: 0.55rem; }
-.event-card { display: grid; grid-template-columns: 1fr; gap: 0.35rem; padding: 0.75rem; border: 1px solid color-mix(in oklab, white 12%, transparent); border-radius: 16px; background: color-mix(in oklab, black 16%, transparent); }
-.event-name { font-weight: 700; }
+
+.event-card 
+{ 
+    display: grid; 
+    grid-template-columns: auto 1fr; 
+    gap: 0.5rem; 
+    padding-left: 0.75rem; 
+    padding-right: 0.75rem;
+    border: 1px solid color-mix(in oklab, white 12%, transparent); 
+    border-radius: 16px; 
+    background: color-mix(in oklab, black 16%, transparent); 
+}
+
+.event-cart-media
+{   
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-self: center;  
+    justify-self: center;
+}
+
+.event-cart-media > img
+{
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    padding: 5px;
+    background-color: color-mix(in oklab, white 12%, transparent); 
+    border: 1px solid color-mix(in oklab, white 12%, transparent);  
+}
+
+.event-card-body 
+{
+    display: grid;
+    grid-column: 2;
+    align-self: center;  
+    margin-top: 10px;
+}
+
+.event-card-body > span
+{
+    display: flex;
+    padding: 0.35rem;
+}
+
+.event-name 
+{ 
+    font-size: 0.9rem; 
+    font-weight: 500; 
+    font-family: var(--font-sans);
+    text-shadow: 1px 1px 8px var(--gold-soft); 
+    justify-self: center;
+    margin-bottom: 0.9rem;
+}
 .event-meta { display: flex; justify-content: space-between; gap: 0.75rem; color: var(--text-dim); font-size: 0.82rem; }
 .clock-next, .clock-diff { color: var(--gold-soft); font-variant-numeric: tabular-nums; text-align: right; }
 .clock-diff { color: var(--text); }
