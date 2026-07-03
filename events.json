@@ -27,6 +27,19 @@
     },
 
     {
+        "id": "reset-season",
+        "name": "Reset de Temporada",
+        "element": {
+            "event": "clk-reset-season-event",
+            "diff": "clk-reset-season-diff"
+        },
+        "schedule": {
+            "type": "date",
+            "isodate": "2026-07-03T00:00:00Z"
+        }
+    },
+
+    {
         "id": "geyser",
         "name": "Gêiser",
         "element": {

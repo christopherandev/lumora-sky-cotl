@@ -246,11 +246,13 @@ main {
     
     /* Quebra o varal no mobile para virar scroll vertical nativo confortável */
     .event-sections { 
+        transform: rotateX(0deg);
         flex-direction: column; 
         overflow-x: visible;
         padding-bottom: 0;
     }
     .event-column {
+        transform: rotateX(0deg);
         width: 100%;
         min-width: 100%;
     }
