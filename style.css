@@ -39,7 +39,7 @@ body
     display: flex;
     position: relative;
 
-    background: url("../assets/images/background.jpg");
+    background: url("assets/images/background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;

@@ -48,7 +48,7 @@
 .travel-card > img
 {
     width: 15vw;
-    background: url("../assets/background.jpg");
+    background: url("assets/background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
