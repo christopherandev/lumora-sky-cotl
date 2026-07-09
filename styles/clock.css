@@ -18,15 +18,11 @@
     --font-sans: "Inter", system-ui, -apple-system, sans-serif;
 }
 
-main 
-{
-    width: min(1380px, 100%);
-    display: flex;
-    flex-direction: column;
-}
-
 .main-section
 {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: column;
     margin: 20px 20px 0 20px;
     width: min(1380px, 100%);
     position: relative;
@@ -36,7 +32,7 @@ main
 .hero-clocks 
 {
     display: grid;
-    grid-template-columns: repeat(2, calc((100vw - 380px) / 2));
+    grid-template-columns: repeat(2, calc((100vw - 360px) / 2));
     gap: 1rem;
 }
 
